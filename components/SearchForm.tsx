@@ -2,10 +2,9 @@ import React from "react";
 import Form from "next/form";
 import SearchFormReset from "./SearchFormReset";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import { Button } from "./ui/button";
 
-const SearchForm = () => {
-    const query = "test";
-
+const SearchForm = ({ query }: { query?: string }) => {
     return (
         <Form action="/" scroll={false} className="search-form">
             <input
@@ -16,9 +15,9 @@ const SearchForm = () => {
             />
             <div className="flex gap-2">
                 {query && <SearchFormReset />}
-                <button type="submit" className="search-btn text-white">
+                <Button type="submit" className="search-btn text-white">
                     <MagnifyingGlassIcon className="h-6 w-6" />
-                </button>
+                </Button>
             </div>
         </Form>
     );
