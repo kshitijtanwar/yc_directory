@@ -4,11 +4,13 @@ import { EyeIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "./ui/button";
+
+
 const StartupCard = ({ post }: { post: StartupCardType }) => {
     const {
         _id,
         _createdAt,
-        author: { _id: authorID, name },
+        author: { _id: authorID, name, image: authorImage },
         category,
         description,
         image,
@@ -37,7 +39,7 @@ const StartupCard = ({ post }: { post: StartupCardType }) => {
                 </div>
                 <Link href={`/user/${authorID}`}>
                     <Image
-                        src={`https://placehold.co/48x48/`}
+                        src={authorImage || `https://placehold.co/48x48/`}
                         width={48}
                         height={48}
                         className="rounded-full"

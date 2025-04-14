@@ -5,6 +5,7 @@ export interface StartupCardType {
     author: {
         _id: number;
         name: string;
+        image: string;
     };
     description: string;
     image: string;
