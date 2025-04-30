@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import { Toaster } from "sonner";
 
 export default function Layout({
     children,
@@ -7,6 +8,7 @@ export default function Layout({
         <main className="font-work-sans">
             <Navbar />
             {children}
+            <Toaster position="top-right" richColors />
         </main>
     );
 }
